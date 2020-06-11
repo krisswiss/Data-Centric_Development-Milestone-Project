@@ -1,0 +1,9 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+{% for shoe in shoes %}
+<p>{{shoe.brand}} - {{shoe.model}} </p>
+{% endfor %}
+
+{% endblock %}
