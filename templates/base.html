@@ -8,6 +8,7 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
 </head>
 
@@ -19,13 +20,13 @@
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="#">Home</a></li>
+                    <li><a href="#">All Shoes</a></li>
                     <li><a href="#">Add Shoe</a></li>
-                    <li><a href="#">Buy Shoes</a></li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
                     <li><a href="#">Home</a></li>
+                    <li><a href="#">All Shoes</a></li>
                     <li><a href="#">Add Shoe</a></li>
-                    <li><a href="#">Buy Shoes</a></li>
                 </ul>
             </div>
         </nav>
@@ -41,24 +42,96 @@
 		<div class="container">
 			<div class="row">
 				<div class="col l6 s12">
-					<h5 class="white-text">Footer Content</h5>
-					<p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+					<h5 class="white-text">Help Shoesycling grow</h5>
+					<p class="grey-text text-lighten-4">If you like this page and would like to contribute to further development, please use the links provided to purchase a pair of your favourite shoes.</p>
+                    <p class="grey-text text-lighten-4">* The total price you will pay will not be affected!</p>
 				</div>
 				<div class="col l4 offset-l2 s12">
-					<h5 class="white-text">Links</h5>
+					<h5 class="white-text">Buy Shoes</h5>
 					<ul>
-						<li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-						<li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-						<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-						<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+						<li><a target="_blank" class="grey-text text-lighten-3" href="https://www.wiggle.co.uk/cycle/cycling-shoes">Wiggle</a></li>
+						<li><a target="_blank" class="grey-text text-lighten-3" href="https://www.fizik.com/eu_en/shop/shoes.html">Fizik</a></li>
+						<li><a target="_blank" class="grey-text text-lighten-3" href="https://www.giro.com/c/bike-shoes">Giro</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="footer-copyright">
 			<div class="container">
-				© 2014 Copyright Text
-				<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            <div class="row">
+
+            <!-- Copyright -->
+
+            <div class="col s12 l4">
+                ©2020 Chris Swiatek. All rights reserved.
+            </div>
+
+            <!-- Modal -->
+            <div class="col s12 l4">
+				
+				<!-- Modal Trigger -->
+                <button data-target="modal1" class="btn modal-trigger waves-effect waves-light" name="contact-form-btn">Contact<i class="material-icons right">email</i></button>
+				
+				<!-- Modal Structure -->
+				<div id="modal1" class="modal modal-fixed-footer black-text">
+					<div class="modal-content">
+						<div class="row">
+							<form class="col s12">
+								<div class="row">
+									<div class="input-field col s12">
+										<input placeholder="name" id="name" type="text" class="validate" required>
+										<label for="name">Name</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="input-field col s12">
+										<input id="email" type="email" class="validate" required>
+										<label for="email">Email</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="input-field col s12">
+										<textarea id="textarea1" class="materialize-textarea" required></textarea>
+										<label for="textarea1">Message</label>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Send</a>
+					</div>
+				</div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="col s12 l4">
+                <ul class="list-inline social-links">
+                  <li class="list-inline-item">
+                     <a target="_blank" href="https://www.linkedin.com/in/chris-swiatek-ab4353178/">
+                     <i class="fa fa-linkedin" aria-hidden="true"></i>
+                     <span class="sr-only">Linked In</span>
+                     </a>
+                  </li>
+                  <li class="list-inline-item">
+                     <a target="_blank" href="https://github.com/krisswiss">
+                     <i class="fa fa-github" aria-hidden="true"></i>
+                     <span class="sr-only">GitHub</span>
+                     </a>
+                  </li>
+                  <li class="list-inline-item">
+                     <a target="_blank" href="https://www.facebook.com/chris.swiatek.963">
+                     <i class="fa fa-facebook" aria-hidden="true"></i>
+                     <span class="sr-only">Facebook</span>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+
+				
+			
+            </div>
 			</div>
 		</div>
 	</footer>
@@ -68,6 +141,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $(".button-collapse").sideNav();
+            $('.modal').modal();
         });
 
     </script>
