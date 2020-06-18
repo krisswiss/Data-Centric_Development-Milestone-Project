@@ -13,10 +13,10 @@ app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 mongo = PyMongo(app)
 
 @app.route('/')
-@app.route('/main')
+@app.route('/home')
 def results():
     shoes = mongo.db.shoes.find()
-    return render_template("main.html", shoes=shoes)
+    return render_template("home.html", shoes=shoes)
 
 
 if __name__ == '__main__':
