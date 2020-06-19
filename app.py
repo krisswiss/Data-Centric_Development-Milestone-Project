@@ -19,6 +19,12 @@ def results():
     return render_template("home.html", shoes=shoes)
 
 
+@app.route('/all_shoes')
+def all_shoes():
+    shoes = mongo.db.shoes.find()
+    return render_template("shoes.html", shoes=shoes)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
