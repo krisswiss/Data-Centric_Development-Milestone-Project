@@ -37,6 +37,13 @@ def mtb_shoes():
     return render_template("shoes.html", shoes=shoes)
 
 
+@app.route('/shoe/<shoe_id>')
+def shoe(shoe_id):
+    shoe = mongo.db.shoes.find({"_id": ObjectId(shoe_id)})
+    reviews = mongo.db.reviews.find({"shoe_id": ObjectId(shoe_id)})
+    return render_template("shoe.html", shoe=shoe, reviews=reviews)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
