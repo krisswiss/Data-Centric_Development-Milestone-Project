@@ -14,7 +14,7 @@ mongo = PyMongo(app)
 
 @app.route('/')
 @app.route('/home')
-def results():
+def home():
     shoes = mongo.db.shoes.find()
     return render_template("home.html", shoes=shoes)
 
@@ -22,6 +22,18 @@ def results():
 @app.route('/all_shoes')
 def all_shoes():
     shoes = mongo.db.shoes.find()
+    return render_template("shoes.html", shoes=shoes)
+
+
+@app.route('/road_shoes')
+def road_shoes():
+    shoes = mongo.db.shoes.find({"cycling_type": "road"})
+    return render_template("shoes.html", shoes=shoes)
+
+
+@app.route('/mtb_shoes')
+def mtb_shoes():
+    shoes = mongo.db.shoes.find({"cycling_type": "mtb"})
     return render_template("shoes.html", shoes=shoes)
 
 
