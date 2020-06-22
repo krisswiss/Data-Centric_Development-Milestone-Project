@@ -44,6 +44,17 @@ def shoe(shoe_id):
     return render_template("shoe.html", shoe=shoe, reviews=reviews)
 
 
+@app.route('/add_shoe')
+def add_shoe():
+    return render_template('addshoe.html')
+
+
+@app.route('/insert_shoe', methods=['POST'])
+def insert_shoe():
+    tasks =  mongo.db.shoes
+    tasks.insert_one(request.form.to_dict())
+    return redirect(url_for('all_shoes'))
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),

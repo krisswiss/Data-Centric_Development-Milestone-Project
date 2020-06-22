@@ -4,7 +4,7 @@
 <h3>Add Shoe</h3>
 
 <div class="row">
-    <form action="#" method="POST" class="col s12">
+    <form action="{{ url_for('insert_shoe') }}" method="POST" class="col s12">
 			<div class="row">
 				<div class="input-field col s12">
                     <i class="material-icons prefix">assignment</i>
@@ -24,8 +24,8 @@
                     <i class="material-icons prefix">poll</i>
                     <select id="cycling_type" name="cycling_type">
                         <option value="" disabled selected>Choose type of cycling</option>
-                        <option value="#">Road</option>
-                        <option value="#">Mtb</option>
+                        <option value="road">Road</option>
+                        <option value="mtb">Mtb</option>
                     </select>
                     <label>Type of cycling</label>
                 </div>
@@ -35,9 +35,9 @@
                     <i class="material-icons prefix">poll</i>
                     <select id="gender" name="gender">
                         <option value="" disabled selected>Choose gender</option>
-                        <option value="#">Male</option>
-                        <option value="#">Female</option>
-                        <option value="#">Unisex</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="unisex">Unisex</option>
                     </select>
                     <label>Gender</label>
                 </div>
@@ -47,8 +47,8 @@
                     <i class="material-icons prefix">poll</i>
                     <select id="sole" name="sole">
                         <option value="" disabled selected>Choose sole material</option>
-                        <option value="#">Plastic</option>
-                        <option value="#">Carbon-fibre</option>
+                        <option value="plastic">Plastic</option>
+                        <option value="carbon-fibre">Carbon-fibre</option>
                     </select>
                     <label>Sole material</label>
                 </div>
@@ -58,9 +58,9 @@
                     <i class="material-icons prefix">poll</i>
                     <select id="closure" name="closure">
                         <option value="" disabled selected>Choose retention system</option>
-                        <option value="#">Boa</option>
-                        <option value="#">Velcro</option>
-                        <option value="#">Laces</option>
+                        <option value="boa">Boa</option>
+                        <option value="velcro">Velcro</option>
+                        <option value="laces">Laces</option>
                     </select>
                     <label>Retention system</label>
                 </div>
@@ -68,8 +68,8 @@
             <div class="row">
                 <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
-                    <textarea name="shoe_description" id="shoe_description" class="materialize-textarea"></textarea>
-                    <label for="shoe_description">Description</label>
+                    <textarea name="description" id="description" class="materialize-textarea"></textarea>
+                    <label for="description">Description</label>
                 </div>
             </div>
             <div class="row">
