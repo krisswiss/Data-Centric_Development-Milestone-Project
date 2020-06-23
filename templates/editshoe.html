@@ -1,0 +1,156 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container">
+<h3>Edit Shoe</h3>
+
+{% for shoe in shoe %}
+<div class="row">
+    <form action="{{ url_for('update_shoe', shoe_id=shoe._id) }}" method="POST" class="col s12">
+			<div class="row">
+				<div class="input-field col s12">
+                    <i class="material-icons prefix">assignment</i>
+					<input id="brand" name="brand" type="text" class="validate" value="{{shoe.brand}}" required>
+					<label for="brand">Brand</label>
+                    <p>*required</p>
+				</div>
+			</div>
+            <div class="row">
+				<div class="input-field col s12">
+                    <i class="material-icons prefix">assignment</i>
+					<input id="model" name="model" type="text" class="validate" value="{{shoe.model}}" required>
+					<label for="brand">Model</label>
+                    <p>*required</p>
+				</div>
+			</div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">poll</i>
+                    <select id="cycling_type" name="cycling_type">
+                        {% if shoe.cycling_type == "road" %}
+                        <option value="" disabled>Choose type of cycling</option>
+                        <option value="road" selected>Road</option>
+                        <option value="mtb">Mtb</option>
+                        {% elif shoe.cycling_type == "mtb" %}
+                        <option value="" disabled>Choose type of cycling</option>
+                        <option value="road">Road</option>
+                        <option value="mtb" selected>Mtb</option>
+                        {% else %}
+                        <option value="" disabled selected>Choose type of cycling</option>
+                        <option value="road">Road</option>
+                        <option value="mtb">Mtb</option>
+                        {% endif %}
+                    </select>
+                    <label>Type of cycling</label>
+                    <p>*required</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">poll</i>
+                    <select id="gender" name="gender">
+                        {% if shoe.gender == "male" %}
+                        <option value="" disabled>Choose gender</option>
+                        <option value="male" selected>Male</option>
+                        <option value="female">Female</option>
+                        <option value="unisex">Unisex</option>
+                        {% elif shoe.gender == "female" %}
+                        <option value="" disabled>Choose gender</option>
+                        <option value="male">Male</option>
+                        <option value="female" selected>Female</option>
+                        <option value="unisex">Unisex</option>
+                        {% elif shoe.gender == "unisex" %}
+                        <option value="" disabled>Choose gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="unisex" selected>Unisex</option>
+                        {% else %}
+                        <option value="" disabled selected>Choose gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="unisex">Unisex</option>
+                        {% endif %}
+                    </select>
+                    <label>Gender</label>
+                    <p>*required</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">poll</i>
+                    <select id="sole" name="sole">
+                        {% if shoe.sole == "plastic" %}
+                        <option value="" disabled>Choose sole material</option>
+                        <option value="plastic" selected>Plastic</option>
+                        <option value="carbon-fibre">Carbon-fibre</option>
+                        {% elif shoe.sole == "carbon-fibre" %}
+                        <option value="" disabled>Choose sole material</option>
+                        <option value="plastic">Plastic</option>
+                        <option value="carbon-fibre" selected>Carbon-fibre</option>
+                        {% else %}
+                        <option value="" disabled selected>Choose sole material</option>
+                        <option value="plastic">Plastic</option>
+                        <option value="carbon-fibre">Carbon-fibre</option>
+                        {% endif %}
+                    </select>
+                    <label>Sole material</label>
+                    <p>*required</p>
+                </div>
+            </div>
+             <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">poll</i>
+                    <select id="closure" name="closure" required>
+                        {% if shoe.closure == "boa" %}
+                        <option value="" disabled>Choose retention system</option>
+                        <option value="boa" selected>Boa</option>
+                        <option value="velcro">Velcro</option>
+                        <option value="laces">Laces</option>
+                        {% elif shoe.closure == "velcro" %}
+                        <option value="" disabled>Choose retention system</option>
+                        <option value="boa">Boa</option>
+                        <option value="velcro" selected>Velcro</option>
+                        <option value="laces">Laces</option>
+                        {% elif shoe.closure == "laces" %}
+                        <option value="" disabled>Choose retention system</option>
+                        <option value="boa">Boa</option>
+                        <option value="velcro">Velcro</option>
+                        <option value="laces" selected>Laces</option>
+                        {% else %}
+                        <option value="" disabled selected>Choose retention system</option>
+                        <option value="boa">Boa</option>
+                        <option value="velcro">Velcro</option>
+                        <option value="laces">Laces</option>
+                        {% endif %}
+                    </select>
+                    <label>Retention system</label>
+                    <p>*required</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                <i class="material-icons prefix">subject</i>
+                    <textarea name="description" id="description" class="materialize-textarea validate">{{shoe.description}}</textarea>
+                    <label for="description">Description</label>
+                </div>
+            </div>
+            <div class="row">
+				<div class="input-field col s12">
+                    <i class="material-icons prefix">assignment</i>
+					<input id="picture_url" name="picture_url" type="text" class="validate" value="{{shoe.picture_url}}">
+					<label for="brand">Picture URL</label>
+				</div>
+			</div>
+
+            <div class="row">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Update Shoe
+                    <i class="material-icons right">playlist_add</i>
+                </button>
+        </div>
+    </form>
+</div>
+{% endfor %}
+
+</div>
+
+
+{% endblock %}
