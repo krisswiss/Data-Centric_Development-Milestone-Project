@@ -8,15 +8,17 @@
 			<div class="row">
 				<div class="input-field col s12">
                     <i class="material-icons prefix">assignment</i>
-					<input id="brand" name="brand" type="text">
+					<input id="brand" name="brand" type="text" class="validate" required>
 					<label for="brand">Brand</label>
+                    <p>*required</p>
 				</div>
 			</div>
             <div class="row">
 				<div class="input-field col s12">
                     <i class="material-icons prefix">assignment</i>
-					<input id="model" name="model" type="text">
+					<input id="model" name="model" type="text" class="validate" required>
 					<label for="brand">Model</label>
+                    <p>*required</p>
 				</div>
 			</div>
             <div class="row">
@@ -28,6 +30,7 @@
                         <option value="mtb">Mtb</option>
                     </select>
                     <label>Type of cycling</label>
+                    <p>*required</p>
                 </div>
             </div>
             <div class="row">
@@ -40,6 +43,7 @@
                         <option value="unisex">Unisex</option>
                     </select>
                     <label>Gender</label>
+                    <p>*required</p>
                 </div>
             </div>
             <div class="row">
@@ -51,31 +55,33 @@
                         <option value="carbon-fibre">Carbon-fibre</option>
                     </select>
                     <label>Sole material</label>
+                    <p>*required</p>
                 </div>
             </div>
              <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">poll</i>
-                    <select id="closure" name="closure">
+                    <select id="closure" name="closure" required>
                         <option value="" disabled selected>Choose retention system</option>
                         <option value="boa">Boa</option>
                         <option value="velcro">Velcro</option>
                         <option value="laces">Laces</option>
                     </select>
                     <label>Retention system</label>
+                    <p>*required</p>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
-                    <textarea name="description" id="description" class="materialize-textarea"></textarea>
+                    <textarea name="description" id="description" class="materialize-textarea validate"></textarea>
                     <label for="description">Description</label>
                 </div>
             </div>
             <div class="row">
 				<div class="input-field col s12">
                     <i class="material-icons prefix">assignment</i>
-					<input id="picture_url" name="picture_url" type="text">
+					<input id="picture_url" name="picture_url" type="text"  class="validate">
 					<label for="brand">Picture URL</label>
 				</div>
 			</div>
