@@ -55,6 +55,30 @@ def insert_shoe():
     tasks.insert_one(request.form.to_dict())
     return redirect(url_for('all_shoes'))
 
+
+@app.route('/edit_shoe/<shoe_id>')
+def edit_shoe(shoe_id):
+    shoe = mongo.db.shoes.find({"_id": ObjectId(shoe_id)})
+    return render_template('editshoe.html', shoe=shoe)
+
+
+@app.route('/update_shoe/<shoe_id>', methods=["POST"])
+def update_shoe(shoe_id):
+    shoe = mongo.db.shoes
+    shoe.update( {'_id': ObjectId(shoe_id)},
+    {
+        'brand': request.form.get('brand'),
+        'model': request.form.get('model'),
+        'cycling_type': request.form.get('cycling_type'),
+        'gender': request.form.get('gender'),
+        'closure': request.form.get('closure'),
+        'sole': request.form.get('sole'),
+        'picture_url': request.form.get('picture_url'),
+        'description': request.form.get('description')
+    })
+    return redirect(url_for('all_shoes'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
