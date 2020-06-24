@@ -51,8 +51,8 @@ def add_shoe():
 
 @app.route('/insert_shoe', methods=['POST'])
 def insert_shoe():
-    tasks =  mongo.db.shoes
-    tasks.insert_one(request.form.to_dict())
+    shoe =  mongo.db.shoes
+    shoe.insert_one(request.form.to_dict())
     return redirect(url_for('all_shoes'))
 
 
@@ -79,6 +79,29 @@ def update_shoe(shoe_id):
         'description': request.form.get('description')
     })
     return render_template("shoe.html", shoe=shoe, reviews=reviews)
+
+
+@app.route('/add_review/<shoe_id>')
+def add_review(shoe_id):
+    shoe = mongo.db.shoes.find({"_id": ObjectId(shoe_id)})
+    return render_template('addreview.html', shoe=shoe)
+
+
+@app.route('/insert_review/<shoe_id>', methods=['POST'])
+def insert_review(shoe_id):
+    review = mongo.db.reviews
+    shoe = mongo.db.shoes.find({"_id": ObjectId(shoe_id)})
+    reviews = mongo.db.reviews.find({"shoe_id": ObjectId(shoe_id)})
+    review.insert_one(
+        {
+        'title': request.form.get('title'),
+        'user': request.form.get('user'),
+        'rating': request.form.get('rating'),
+        'review': request.form.get('review'),
+        'shoe_id': 'ObjectId(shoe_id)'
+    }
+    )
+    return render_template('shoe.html', shoe=shoe, reviews=reviews)
 
 
 if __name__ == '__main__':

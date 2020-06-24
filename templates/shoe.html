@@ -31,7 +31,7 @@
         <button class="btn waves-effect waves-light" name="remove_shoe">Remove Shoe<i class="material-icons right">email</i></button>
     </div>
     <div class="col s12 l4">
-        <button class="btn waves-effect waves-light" name="add_review">Add Review<i class="material-icons right">email</i></button>
+        <a href="{{url_for('add_review', shoe_id=shoe._id)}}" class="waves-effect waves-light btn btn_small blue">Add Review<i class="material-icons right">email</i></a>
     </div>
 
 </div>
@@ -43,7 +43,8 @@
       <div class="collapsible-header">
       <i class="material-icons">expand_more</i>
       <h5>{{review.title}}</h5>
-      <i class="material-icons right">star</i></div>
+      <i class="material-icons right">star</i>
+      </div>
       <div class="collapsible-body">
       <span>{{review.review}}</span>
       <p>user: {{review.user}}</p>
