@@ -64,8 +64,10 @@ def edit_shoe(shoe_id):
 
 @app.route('/update_shoe/<shoe_id>', methods=["POST"])
 def update_shoe(shoe_id):
-    shoe = mongo.db.shoes
-    shoe.update( {'_id': ObjectId(shoe_id)},
+    shoe = mongo.db.shoes.find({"_id": ObjectId(shoe_id)})
+    reviews = mongo.db.reviews.find({"shoe_id": ObjectId(shoe_id)})
+    updated_shoe = mongo.db.shoes
+    updated_shoe.update( {'_id': ObjectId(shoe_id)},
     {
         'brand': request.form.get('brand'),
         'model': request.form.get('model'),
@@ -76,7 +78,7 @@ def update_shoe(shoe_id):
         'picture_url': request.form.get('picture_url'),
         'description': request.form.get('description')
     })
-    return redirect(url_for('all_shoes'))
+    return render_template("shoe.html", shoe=shoe, reviews=reviews)
 
 
 if __name__ == '__main__':
