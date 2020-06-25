@@ -23,11 +23,11 @@
     <form action="{{ url_for('insert_review', shoe_id=shoe._id) }}" method="POST" class="col s12">
 
 
-        <div class="row">
+        <div class="row" id="hidden">
             <div class="input-field col s12">
                 <i class="material-icons prefix">poll</i>
                  <select id="shoe_id" name="shoe_id">
-                    <option value="ObjectId(&quot;{{shoe._id}}&quot;)" selected>{{shoe._id}}</option>
+                    <option value="{{shoe._id}}" selected>{{shoe._id}}</option>
                 </select>
                 <label>shoe id:</label>
                 <p>*required</p>

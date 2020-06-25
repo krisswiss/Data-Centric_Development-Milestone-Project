@@ -98,7 +98,7 @@ def insert_review(shoe_id):
         'user': request.form.get('user'),
         'rating': request.form.get('rating'),
         'review': request.form.get('review'),
-        'shoe_id': request.form.get('shoe_id')
+        'shoe_id': ObjectId(shoe_id)
     })
     return render_template('shoe.html', shoe=shoe, reviews=reviews)
 
