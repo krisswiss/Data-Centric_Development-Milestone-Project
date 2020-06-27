@@ -111,6 +111,28 @@ def delete_review(review_id, shoe_id):
     return render_template("shoe.html", shoe=shoe, reviews=reviews)
 
 
+@app.route('/edit_review/<review_id>/<shoe_id>')
+def edit_review(review_id, shoe_id):
+    reviews = mongo.db.reviews.find({"_id": ObjectId(review_id)})
+    shoe = mongo.db.shoes.find({"_id": ObjectId(shoe_id)})
+    return render_template('editreview.html', shoe=shoe, reviews=reviews)
+
+
+@app.route('/update_review/<review_id>/<shoe_id>', methods=['POST'])
+def update_review(review_id, shoe_id):
+    shoe = mongo.db.shoes.find({"_id": ObjectId(shoe_id)})
+    reviews = mongo.db.reviews.find({"shoe_id": ObjectId(shoe_id)})
+    mongo.db.reviews.update({'_id': ObjectId(review_id)},
+    {
+        'title': request.form.get('title'),
+        'user': request.form.get('user'),
+        'rating': request.form.get('rating'),
+        'review': request.form.get('review'),
+        'shoe_id': ObjectId(shoe_id)
+    })
+    return render_template("shoe.html", shoe=shoe, reviews=reviews)
+
+
 @app.route('/remove_shoe/<shoe_id>')
 def remove_shoe(shoe_id):
     mongo.db.shoes.remove({'_id': ObjectId(shoe_id)})
