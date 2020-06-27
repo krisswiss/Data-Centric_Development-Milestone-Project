@@ -103,6 +103,14 @@ def insert_review(shoe_id):
     return render_template('shoe.html', shoe=shoe, reviews=reviews)
 
 
+@app.route('/delete_review/<review_id>/<shoe_id>')
+def delete_review(review_id, shoe_id):
+    mongo.db.reviews.remove({'_id': ObjectId(review_id)})
+    shoe = mongo.db.shoes.find({"_id": ObjectId(shoe_id)})
+    reviews = mongo.db.reviews.find({"shoe_id": ObjectId(shoe_id)})
+    return render_template("shoe.html", shoe=shoe, reviews=reviews)
+
+
 @app.route('/remove_shoe/<shoe_id>')
 def remove_shoe(shoe_id):
     mongo.db.shoes.remove({'_id': ObjectId(shoe_id)})

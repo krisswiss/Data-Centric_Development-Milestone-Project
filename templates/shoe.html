@@ -33,9 +33,9 @@
     <div class="col s12 l4">
         <a href="{{url_for('add_review', shoe_id=shoe._id)}}" class="waves-effect waves-light btn btn_small blue">Add Review<i class="material-icons right">email</i></a>
     </div>
-
-</div>
 {% endfor %}
+</div>
+
 <h4>Reviews:</h4>
 {% for review in reviews %}
 <ul class="collapsible" data-collapsible="accordion">
@@ -49,7 +49,7 @@
       <span>{{review.review}}</span>
       <p>user: {{review.user}}</p>
       <a href="#" class="waves-effect waves-light btn btn_small">Edit review</a>
-      <a href="#" class="waves-effect waves-light btn btn_small blue">Delete review</a>
+      <a href="{{url_for('delete_review', review_id=review._id, shoe_id=review.shoe_id)}}" class="waves-effect waves-light btn btn_small blue">Delete review</a>
       </div>
     </li>
   </ul>
