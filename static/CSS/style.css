@@ -1,0 +1,104 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+    flex: 1 0 auto;
+  }
+
+/*-------------------------------- Navbar ---*/
+
+nav {
+    background-color: #10172f;
+}
+
+nav a {
+    text-decoration: underline;
+}
+
+nav ul a:hover {
+    background-color: rgb(35, 35, 35);
+}
+
+nav .brand-logo {
+    padding-left: 15px;
+}
+
+#nav-mobile,
+nav .brand-logo {
+    text-decoration: underline;
+}
+
+/*-------------------------------- Home ---*/
+
+h1 {
+    font-size: 4rem;
+    padding: 2rem;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.road-mtb-shoe-links {
+    text-decoration: none;
+    color: black;
+}
+
+.road-mtb-shoe-links a:hover {
+    color: rgb(35, 35, 35);
+}
+
+img {
+    min-width: 100%;
+}
+
+.padding {
+    padding: 1rem 0rem;
+}
+
+/*-------------------------------- Footer ---*/
+
+.page-footer {
+    background-color: #10172f;
+}
+
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+.list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.list-inline-item {
+    padding-right: 20px;
+}
+
+.list-inline-item a {
+    color: #f7f2ef;
+}
+
+#copyright,
+#modal {
+    padding-top: 10px;
+}
+
+.blue.darken-4 {
+    background-color: #2d405d;
+}
+
+#hidden {
+    display: none;
+}
+
+

@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/style.css')}}" type="text/css" />
 </head>
 
 <body>
@@ -67,15 +67,15 @@
 
             <!-- Copyright -->
 
-            <div class="col s12 l4">
+            <div class="col s12 l4" id="copyright">
                 ©2020 Chris Swiatek. All rights reserved.
             </div>
 
             <!-- Modal -->
-            <div class="col s12 l4">
+            <div class="col s12 l4" id="modal">
 				
 				<!-- Modal Trigger -->
-                <button data-target="modal1" class="btn modal-trigger waves-effect waves-light" name="contact-form-btn">Contact<i class="material-icons right">email</i></button>
+                <button data-target="modal1" class="btn-small modal-trigger waves-effect waves-light blue darken-4" name="contact-form-btn" id="contact-button">Contact<i class="material-icons right">email</i></button>
 				
 				<!-- Modal Structure -->
 				<div id="modal1" class="modal modal-fixed-footer black-text">
