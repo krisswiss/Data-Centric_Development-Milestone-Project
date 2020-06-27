@@ -8,7 +8,7 @@
 	<div class="card-panel white lighten-5 z-depth-1">
 		<div class="row valign-wrapper">
 			<div class="col s2">
-				<img src="{{shoe.picture_url}}" alt="Shoe Image" class="responsive-img">
+				<img alt="Shoe Image" class="responsive-img" src="{{shoe.picture_url}}" onerror="this.onerror=null;this.src='static/images/cards-picture.jpg';">
             </div>
 			<div class="col s10">
 				<span class="black-text" id="card-text">{{shoe.brand}} {{shoe.model}} {{shoe.cycling_type}} shoe</span>   

@@ -5,7 +5,7 @@
 {% for shoe in shoe %}
 <h3>{{shoe.brand}} {{shoe.model}}</h3>
 <br>
-<img class="materialboxed responsive-img" src="{{shoe.picture_url}}" alt="Cycling shoe">
+<img alt="If Shoe Image doesn't display please Edit Shoe to add picture." class="materialboxed responsive-img" src="{{shoe.picture_url}}">
 <h4>Features:</h4>
 <div class="row">
 	<div class="col s12 l6">
@@ -20,12 +20,15 @@
 	</div>
 </div>
 <h4>Description:</h4>
+    {% if shoe.description %}
     <p>{{shoe.description}}</p>
-
+    {% else %}
+    <p>Please go to Edit Shoe to add Description.</p>
+    {% endif %}
 <div class="row">
 
     <div class="col s12 l4">
-        <a href="{{url_for('edit_shoe', shoe_id=shoe._id)}}" class="waves-effect waves-light btn btn_small blue">Edit Description<i class="material-icons right">email</i></a>
+        <a href="{{url_for('edit_shoe', shoe_id=shoe._id)}}" class="waves-effect waves-light btn btn_small blue">Edit Shoe<i class="material-icons right">email</i></a>
     </div>
     <div class="col s12 l4">
         <a href="{{url_for('remove_shoe', shoe_id=shoe._id)}}" class="waves-effect waves-light btn btn_small blue">Remove Shoe<i class="material-icons right">email</i></a>
@@ -38,6 +41,7 @@
 
 <h4>Reviews:</h4>
 {% for review in reviews %}
+{% if review %}
 <ul class="collapsible" data-collapsible="accordion">
     <li>
       <div class="collapsible-header">
@@ -53,6 +57,9 @@
       </div>
     </li>
   </ul>
+{% else %}
+<p>Be first to add review!</p>
+{% endif %}
 {% endfor %}
 
 </div>
