@@ -43,7 +43,7 @@
       <div class="collapsible-header">
       <i class="material-icons">expand_more</i>
       <h5>{{review.title}}</h5>
-      <i class="material-icons right">star</i>
+      {% include 'starrating.html' %}
       </div>
       <div class="collapsible-body">
       <span>{{review.review}}</span>

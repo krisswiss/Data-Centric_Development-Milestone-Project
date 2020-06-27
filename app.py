@@ -139,6 +139,7 @@ def remove_shoe(shoe_id):
     mongo.db.reviews.remove({'shoe_id': ObjectId(shoe_id)})
     return redirect(url_for('all_shoes'))
 
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
