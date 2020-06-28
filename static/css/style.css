@@ -138,6 +138,23 @@ img {
     margin-top: 15px;
 }
 
+/*-------------------------------- Add / Edit Shoe ---*/
+
+form p {
+    text-align: right;
+    color: red;
+}
+
+form input,
+form label {
+    font-size: 2rem;
+}
+
+.optional-fields {
+    font-size: 1em;
+    color: green;
+}
+
 /*-------------------------------- Footer ---*/
 
 .page-footer {
