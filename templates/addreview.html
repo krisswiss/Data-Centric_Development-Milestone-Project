@@ -8,10 +8,10 @@
 	<div class="card-panel white lighten-5 z-depth-1">
 		<div class="row valign-wrapper">
 			<div class="col s2">
-				<img alt="Shoe Image" class="responsive-img" src="{{shoe.picture_url}}" onerror="this.onerror=null;this.src='static/images/cards-picture.jpg';">
+				<img alt="Shoe Image" class="materialboxed responsive-img" src="{{shoe.picture_url}}" onerror="this.onerror=null;this.src='static/images/cards-picture.jpg';">
             </div>
 			<div class="col s10">
-				<span class="black-text" id="card-text">{{shoe.brand}} {{shoe.model}} {{shoe.cycling_type}} shoe</span>   
+				<h5 class="black-text" id="card-text">{{shoe.brand}} {{shoe.model}} {{shoe.cycling_type}} shoe</h5>   
 			</div>
 		</div>
 	</div>
@@ -39,7 +39,7 @@
     
         <div class="row">
 			<div class="input-field col s12">
-                <i class="material-icons prefix">assignment</i>
+                <i class="material-icons prefix">edit</i>
 				<input id="title" name="title" type="text"  class="validate" required>
 				<label for="title">Review title / overall comment:</label>
                 <p>*required</p>
@@ -47,7 +47,7 @@
 		</div>
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">subject</i>
+                <i class="material-icons prefix">edit</i>
                 <textarea name="review" id="review" class="materialize-textarea validate" required></textarea>
                 <label for="review">Your review:</label>
                 <p>*required</p>
@@ -55,7 +55,7 @@
         </div>
         <div class="row">
 			<div class="input-field col s12">
-                <i class="material-icons prefix">assignment</i>
+                <i class="material-icons prefix">edit</i>
 				<input id="user" name="user" type="text"  class="validate" required>
 				<label for="user">Your nickname:</label>
                 <p>*required</p>
@@ -63,14 +63,14 @@
 		</div>
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">poll</i>
+                <i class="material-icons prefix">edit</i>
                  <select id="rating" name="rating" required>
                     <option value="" disabled selected>Overall rating</option>
-                    <option value="1">Poor <i class="material-icons right">star</i></option>
-                    <option value="2">Fair <i class="material-icons right">star</i><i class="material-icons right">star</i></option>
-                    <option value="3">Average <i class="material-icons right">star</i><i class="material-icons right">star</i><i class="material-icons right">star</i></option>
-                    <option value="4">Good <i class="material-icons right">star</i><i class="material-icons right">star</i><i class="material-icons right">star</i><i class="material-icons right">star</i></option>
-                    <option value="5">Excellent <i class="material-icons right">star</i><i class="material-icons right">star</i><i class="material-icons right">star</i><i class="material-icons right">star</i><i class="material-icons right">star</i></option>
+                    <option value="1">1 Star (poor)</option>
+                    <option value="2">2 Stars (fair)</option>
+                    <option value="3">3 Stars (average)</option>
+                    <option value="4">4 Stars (good)</option>
+                    <option value="5">5 Stars (excellent)</option>
                 </select>
                 <label>Overall rating:</label>
                 <p>*required</p>
@@ -78,7 +78,7 @@
         </div>
         <div class="row">
             <button class="btn waves-effect waves-light" type="submit" name="action">Add Review
-                <i class="material-icons right">playlist_add</i>
+                <i class="material-icons right">send</i>
             </button>
         </div>
     </form>
