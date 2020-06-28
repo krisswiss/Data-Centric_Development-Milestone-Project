@@ -15,7 +15,7 @@ main {
 /*-------------------------------- Navbar ---*/
 
 nav {
-    background-color: #10172f;
+    background-color:#10172f;
 }
 
 nav a {
@@ -61,6 +61,39 @@ img {
 
 .padding {
     padding: 1rem 0rem;
+}
+
+.on-hover-blue,
+.on-hover-red,
+.on-hover-green {
+    background-color: #10172f;
+}
+
+.on-hover-blue:hover {
+    background-color: blue !important;
+    text-decoration: none;
+    transition: all .6s ease-in-out;
+    -moz-transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+    -o-transition: all .6s ease-in-out;
+}
+
+.on-hover-red:hover {
+    background-color: red !important;
+    text-decoration: none;
+    transition: all .6s ease-in-out;
+    -moz-transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+    -o-transition: all .6s ease-in-out;
+}
+
+.on-hover-green:hover {
+    background-color: green !important;
+    text-decoration: none;
+    transition: all .6s ease-in-out;
+    -moz-transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+    -o-transition: all .6s ease-in-out;
 }
 
 /*-------------------------------- Footer ---*/
