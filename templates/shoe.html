@@ -26,23 +26,26 @@
     <p>Please go to Edit Shoe to add Description.</p>
     {% endif %}
 <div class="row" id="shoe-action-buttons-row">
-
-    <div class="col s12 l4">
-        <a href="{{url_for('edit_shoe', shoe_id=shoe._id)}}" class="waves-effect waves-light btn btn_small on-hover-blue">Edit Shoe<i class="material-icons right">edit</i></a>
-    </div>
-    <div class="col s12 l4">
-        <a href="{{url_for('remove_shoe', shoe_id=shoe._id)}}" class="waves-effect waves-light btn btn_small on-hover-red">Remove Shoe<i class="material-icons right">delete_forever</i></a>
-    </div>
+    
     <div class="col s12 l4">
         <a href="{{url_for('add_review', shoe_id=shoe._id)}}" class="waves-effect waves-light btn btn_small on-hover-green">Add Review<i class="material-icons right">add</i></a>
     </div>
+    <div class="col s12 l4">
+        <a href="{{url_for('edit_shoe', shoe_id=shoe._id)}}" class="waves-effect waves-light btn btn_small on-hover-blue">Edit Shoe<i class="material-icons right">edit</i></a>
+    </div>
+	<div class="col s12 l4">
+		<a href="{{url_for('remove_shoe', shoe_id=shoe._id)}}" class="waves-effect waves-light btn btn_small on-hover-red">Remove Shoe<i class="material-icons right">delete_forever</i></a>
+	</div>
+
 {% endfor %}
 </div>
 
 <h4>Reviews:</h4>
 <br>
+
 {% for review in reviews %}
 {% if review %}
+
 <ul class="collapsible" data-collapsible="accordion">
     <li>
 	<div class="collapsible-header">
@@ -71,11 +74,13 @@
       </div>
     </li>
   </ul>
+
 {% else %}
-<p>Be first to add review!</p>
+
+    <h5>Be the first to add review!</h5>
+    <p>Simply click on Add Review button above.</p>
+
 {% endif %}
 {% endfor %}
-
-</div>
 
 {% endblock %}
