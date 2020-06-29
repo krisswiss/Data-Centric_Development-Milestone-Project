@@ -34,7 +34,18 @@
         <a href="{{url_for('edit_shoe', shoe_id=shoe._id)}}" class="waves-effect waves-light btn btn_small on-hover-blue">Edit Shoe<i class="material-icons right">edit</i></a>
     </div>
 	<div class="col s12 l4">
-		<a href="{{url_for('remove_shoe', shoe_id=shoe._id)}}" class="waves-effect waves-light btn btn_small on-hover-red">Remove Shoe<i class="material-icons right">delete_forever</i></a>
+		<a href="#delete-shoe-modal" class="waves-effect waves-light btn btn_small modal-trigger on-hover-red">Remove Shoe<i class="material-icons right">delete_forever</i></a>
+	</div>
+    <!-- Modal Structure -->
+	<div id="delete-shoe-modal" class="modal">
+		<div class="modal-content">
+			<h4>Are you sure you want to permanently delete this shoe?</h4>
+			<p>{{shoe.brand}} {{shoe.model}}</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a href="{{url_for('remove_shoe', shoe_id=shoe._id)}}" class="modal-action modal-close waves-effect waves-green btn-flat">Delete</a>
+		</div>
 	</div>
 
 {% endfor %}
@@ -44,7 +55,7 @@
 <br>
 
 {% for review in reviews %}
-{% if review %}
+
 
 <ul class="collapsible" data-collapsible="accordion">
     <li>
@@ -68,19 +79,15 @@
         <div class="col s12 m3" id="review-user"><p>user: {{review.user}}</p></div>
         <div class="col s12 m9" id="review-buttons">
         <a href="{{url_for('edit_review', review_id=review._id, shoe_id=review.shoe_id)}}" class="waves-effect waves-light btn btn_small on-hover-green">Edit review<i class="material-icons right">edit</i></a>
-        <a href="{{url_for('delete_review', review_id=review._id, shoe_id=review.shoe_id)}}" class="waves-effect waves-light btn btn_small on-hover-red">Remove review<i class="material-icons right">delete_forever</i></a>
+        <a href="{{url_for('delete_review', review_id=review._id, shoe_id=review.shoe_id)}}" class="waves-effect waves-light btn btn_small modal-trigger on-hover-red">Remove review<i class="material-icons right">delete_forever</i></a>
         </div>
       </div>
       </div>
     </li>
   </ul>
 
-{% else %}
-
-    <h5>Be the first to add review!</h5>
-    <p>Simply click on Add Review button above.</p>
-
-{% endif %}
 {% endfor %}
+
+</div>
 
 {% endblock %}
