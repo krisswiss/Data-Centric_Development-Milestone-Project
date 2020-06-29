@@ -14,27 +14,29 @@
 
 <body>
     <header>
-        <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <a href="{{url_for('home')}}" class="brand-logo">Shoesycling</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="{{url_for('home')}}">Home</a></li>
-                    <li><a href="{{url_for('all_shoes')}}">All Shoes</a></li>
-                    <li><a href="{{url_for('add_shoe')}}">Add Shoe</a></li>
-                </ul>
-                <ul class="side-nav" id="mobile-demo">
-                    <li><a href="{{url_for('home')}}">Home</a></li>
-                    <li><a href="{{url_for('all_shoes')}}">All Shoes</a></li>
-                    <li><a href="{{url_for('road_shoes')}}">Road Shoes</a></li>
-                    <li><a href="{{url_for('mtb_shoes')}}">MTB Shoes</a></li>
-                    <li><a href="{{url_for('add_shoe')}}">Add Shoe</a></li>
-                </ul>
-            </div>
-        </nav>
-        </div>
-    </header>
+        <!------------------------------- Nav ----------->
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper">
+					<a href="{{url_for('home')}}" class="brand-logo">Shoesycling</a>
+					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="{{url_for('home')}}">Home</a></li>
+						<li><a href="{{url_for('all_shoes')}}">All Shoes</a></li>
+						<li><a href="{{url_for('add_shoe')}}">Add Shoe</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+        <!---------------------- Mobile Nav ----------->
+					<ul class="side-nav" id="mobile-demo">
+						<li><a href="{{url_for('home')}}">Home</a></li>
+						<li><a href="{{url_for('all_shoes')}}">All Shoes</a></li>
+						<li><a href="{{url_for('road_shoes')}}">Road Shoes</a></li>
+						<li><a href="{{url_for('mtb_shoes')}}">MTB Shoes</a></li>
+						<li><a href="{{url_for('add_shoe')}}">Add Shoe</a></li>
+					</ul>
+	</header>
 
     <main>
         
