@@ -46,15 +46,6 @@ After that on top of the page they are 2 pictures which work as links to filter 
 On the next page results are presented in simple cards with just a picture and name and model of the shoe. User can click on the picture wchich will reveal main features of the shoe. Below is the link to full description and reviews.</br>
 After selecting the shoe user wants to view, another page opens with detailed description, fullsize picture, features and description. Below user can read reviews, which are presented in another engaging way - expandable accordion from Materialize.</br>
 
-### Sufrace Plane
-I aimed for simple, yet modern design, hence the choince of white background contracting with elegant dark navy navigation bar and footer.</br>
-Fonts used are very neutral, clear and easy to read.</br>
-All buttons have been styled to change colors when hovered based on the action:
-- Add, green
-- Edit, blue
-- Remove, red
-to further indicate desired action and make it as user friendly and attractive as possible.
-
 
 ### Wireframes
 
@@ -64,11 +55,14 @@ to further indicate desired action and make it as user friendly and attractive a
 [Each Shoe](https://github.com/krisswiss/Data-Centric_Development-Milestone-Project/blob/master/wireframes/03.%20Each%20Shoe.JPG)</br>
 [Add/Edit Shoe](https://github.com/krisswiss/Data-Centric_Development-Milestone-Project/blob/master/wireframes/04.%20Add%20Edit%20Shoe.JPG)</br>
 
-### Surface
-
-Despite the minimalist approach, I was hoping to reflect the essence of my chosen project which is to locate four categories of arts in any chosen area, hence the choice of font and background image. The colours I chose for the header and footer were to complimment the background (a palate of oil paints) without causing distraction to the viewer but to allow a popping quality of distinction while remaining harmonious.</br>
-I have chosen the satellite map type as the default as it further enhances the visual distinction while colourfully balancing the site. This defualt map type allows for a more artistically visual experience as apposed to the standard map type which in this particular case could obstruct the intended artisic appearance and therfore faith in this websites purpose, to locate artistic sites.  </br>
-However, if the user wishes to opt for the standard map type, this option is still available to them.</br>
+### Sufrace Plane
+I aimed for simple, yet modern design, hence the choince of white background contracting with elegant dark navy navigation bar and footer.</br>
+Fonts used are very neutral, clear and easy to read.</br>
+All buttons have been styled to change colors when hovered based on the action:
+- Add, green
+- Edit, blue
+- Remove, red
+to further indicate desired action and make it as user friendly and attractive as possible.
 
 ## Technologies
 1.	HTML
@@ -134,7 +128,7 @@ In your Heroku account, create a new app
 2. Ensure in your app you have in your app files in GitHub a Procfile with the following: 'web: python app.py', and you project requirements in a requirements.txt file.
 3. In Heroku, in your app and under the 'deploy' tab, choose the GitHub deployment method. In the app connected to GitHub section find and select the app you wish to deploy.
 4. Choose either automatic or manual deploys. In whichever you choose, select the branch in the GitHub repository you wish to deploy.</br>
-Final deployed site is [here](//https://shoesycling.herokuapp.com//).</br>
+Final deployed site is [here](https://shoesycling.herokuapp.com/).</br>
 
 
 ***This is for educational use only.***
